@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Configuration Variables
+CONTAINER_USER="dev"
+CONTAINER_WORKSPACE="/home/$CONTAINER_USER/dev_ws"
+
 # Allow local Docker containers to communicate with the host's X11 Display server
 xhost +local:root
 
@@ -16,5 +20,6 @@ docker run -it --rm \
 	--ipc=host \
 	--env=DISPLAY \
 	-v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+	-v $(pwd):$CONTAINER_WORKSPACE:rw \
 	polemarchus-desktop \
 	/bin/bash

@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Fixed Wheel Macro -->
+    <xacro:macro name="fixed_wheel" params="prefix x_offset y_reflect">
+        <joint name="${prefix}_wheel_joint" type="continuous">
+            <parent link="base_link"/>
+            <child link="${prefix}_wheel_link"/>
+            <origin xyz="${x_offset} ${y_reflect * wheel_offset_y} 0" rpy="-${pi / 2} 0 0"/>
+            <axis xyz="0 0 1"/>
+        </joint>
+    
+
+        <link name="${prefix}_wheel_link">
+            <visual>
+                <geometry>
+                    <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+                </geometry>
+                <material name="black"/>
+            </visual>
+            <collision>
+                <geometry>
+                    <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+                </geometry>
+                <material name="black"/>
+            </collision>
+            <xacro:inertial_cylinder mass="${wheel_mass}" length="${wheel_length}" radius="${wheel_radius}">
+                <origin xyz="0 0 0"/>
+            </xacro:inertial_cylinder>
+        </link>
+        </xacro:macro>
+
+    <!-- Steered Wheel Macro -->
+     <xacro:macro name="steered_wheel" params="prefix x_offset y_reflect">
+        <!-- Steering Knuckle -->
+        <joint name="${prefix}_steer_joint" type="revolute">
+            <parent link="base_link"/>
+            <child link="${prefix}_steer_link"/>
+            <origin xyz="${x_offset} ${y_reflect * wheel_offset_y} 0"/>
+            <axis xyz="0 0 1"/>
+            <limit lower="-0.52" upper="0.52" effort="10.0" velocity="5.0"/>
+        </joint>
+
+        <link name="${prefix}_steer_link">
+
+        </link>
+
+        <!-- Wheel -->
+        <joint name="${prefix}_wheel_joint" type="continuous">
+            <parent link="${prefix}_steer_link"/>
+            <child link="${prefix}_wheel_link"/>
+            <origin xyz="0 0 0" rpy="-${pi / 2} 0 0"/>
+            <axis xyz="0 0 1"/>
+        </joint>
+
+        <link name="${prefix}_wheel_link">
+            <visual>
+                <geometry>
+                    <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+                </geometry>
+                <material name="black"/>
+            </visual>
+            <collision>
+                <geometry>
+                    <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+                </geometry>
+            </collision>
+            <xacro:inertial_cylinder mass="${wheel_mass}" length="${wheel_length}" radius="${wheel_radius}">
+                <origin xyz="0 0 0"/>
+            </xacro:inertial_cylinder>
+        </link>
+     </xacro:macro>
+</robot>
