@@ -28,7 +28,16 @@
                 <origin xyz="0 0 0"/>
             </xacro:inertial_cylinder>
         </link>
-        </xacro:macro>
+
+        <!-- Tire Friction -->
+        <gazebo reference="${prefix}_wheel_link">
+            <mu1>0.9</mu1>
+            <mu2>0.9</mu2>
+            <kp>100000000.0</kp>
+            <kd>1.0</kd>
+        </gazebo>
+
+    </xacro:macro>
 
     <!-- Steered Wheel Macro -->
      <xacro:macro name="steered_wheel" params="prefix x_offset y_reflect">
@@ -38,11 +47,14 @@
             <child link="${prefix}_steer_link"/>
             <origin xyz="${x_offset} ${y_reflect * wheel_offset_y} 0"/>
             <axis xyz="0 0 1"/>
-            <limit lower="-0.52" upper="0.52" effort="10.0" velocity="5.0"/>
+            <limit lower="-${max_steer_angle}" upper="${max_steer_angle}" effort="10.0" velocity="5.0"/>
         </joint>
 
+        <!-- Steering Knuckle Inertial Tag for simulation -->
         <link name="${prefix}_steer_link">
-
+            <xacro:inertial_box mass="0.01" x="0.02" y="0.02" z="0.02">
+                <origin xyz="0 0 0"/>
+            </xacro:inertial_box>
         </link>
 
         <!-- Wheel -->
@@ -69,5 +81,13 @@
                 <origin xyz="0 0 0"/>
             </xacro:inertial_cylinder>
         </link>
+
+        <gazebo reference="${prefix}_wheel_link">
+            <mu1>0.9</mu1>
+            <mu2>0.9</mu2>
+            <kp>100000000.0</kp>
+            <kd>1.0</kd>
+        </gazebo>
+        
      </xacro:macro>
 </robot>

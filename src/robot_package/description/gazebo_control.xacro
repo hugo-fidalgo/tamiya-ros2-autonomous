@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <gazebo>
+        <plugin filename="ignition-gazebo-ackermann-steering-system" name="gz::sim::systems::AckermannSteering">
+            
+            <!-- Rear Wheels -->
+            <left_joint>rl_wheel_joint</left_joint>
+            <right_joint>rr_wheel_joint</right_joint>
+
+            <!-- Front Wheels -->
+            <left_joint>fl_wheel_joint</left_joint>
+            <right_joint>fr_wheel_joint</right_joint>
+
+            <!-- Steering Knuckles -->
+            <left_steering_joint>fl_steer_joint</left_steering_joint>
+            <right_steering_joint>fr_steer_joint</right_steering_joint>
+
+            <!-- Kinematic Dimensions -->
+            <wheel_separation>${track_width}</wheel_separation>
+            <wheel_base>${wheel_base}</wheel_base>
+            <kingpin_width>${track_width}</kingpin_width>
+            <wheel_radius>${wheel_radius}</wheel_radius>
+
+            <!-- Limits -->
+            <steering_limit>${max_steer_angle}</steering_limit>
+            <max_velocity>2.0</max_velocity>
+            <min_velocity>-2.0</min_velocity>
+            <max_acceleration>1.5</max_acceleration>
+            <min_acceleration>-1.5</min_acceleration>
+            <max_jerk>10.0</max_jerk>
+
+            <!-- ROS2 Topic -->
+            <topic>/cmd_vel</topic>
+
+            <!-- Odometry -->
+            <odom_topic>/odom</odom_topic>
+            <tf_topic>/tf</tf_topic>
+            <frame_id>odom</frame_id>
+            <child_frame_id>base_link</child_frame_id>
+
+        </plugin>
+
+        <!-- Joint State Publisher -->
+        <plugin filename="ignition-gazebo-joint-state-publisher-system" name="ignition::gazebo::systems::JointStatePublisher">
+            <topic>/joint_states</topic>
+        </plugin>
+    </gazebo>
+
+</robot>
