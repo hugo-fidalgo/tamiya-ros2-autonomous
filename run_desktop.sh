@@ -21,5 +21,7 @@ docker run -it --rm \
 	--env=DISPLAY \
 	-v /tmp/.X11-unix:/tmp/.X11-unix:rw \
 	-v $(pwd):$CONTAINER_WORKSPACE:rw \
+	--device=/dev/arduino_mcu:/dev/arduino_mcu \
+	--group-add dialout \
 	polemarchus-desktop \
 	/bin/bash

@@ -17,7 +17,7 @@ def generate_launch_description():
     # Include the robot_state_publisher launch file, provided by our own package.
     # Force sim time to be enabled
 
-    package_name='robot_package'
+    package_name='tamiya_rover_description'
 
     rsp = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(get_package_share_directory(package_name), 'launch', 'rsp.launch.py')]),
