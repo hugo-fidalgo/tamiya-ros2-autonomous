@@ -5,13 +5,153 @@
 	(uuid "1215f328-7219-4a6d-b808-c72612ecb717")
 	(paper "A4")
 	(title_block
-		(title "Project POLEMARCHUS - Vehicle Avionics & Power Distribution")
+		(title "Project POLEMARCHUS - Vetronics & Power Distribution")
 		(date "2026-08-24")
 		(rev "1.0")
 		(company "Hugo Fidalgo - Personal Engineering Portfolio")
 		(comment 1 "Subsystems: EPS, OBDH, GNC, STR")
 	)
 	(lib_symbols
+		(symbol "Connector:Conn_01x01_Pin"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x01_Pin"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x01, script generated"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x01_Pin_1_1"
+				(rectangle
+					(start 0.8636 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 0.8636 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:Conn_01x02_Pin"
 			(pin_names
 				(offset 1.016)
@@ -1772,16 +1912,6 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 138.43) (xy 67.31 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0a384692-69a4-4754-80f3-64e3a25a5cf4")
-	)
-	(wire
-		(pts
 			(xy 149.86 140.97) (xy 146.05 140.97)
 		)
 		(stroke
@@ -1842,6 +1972,16 @@
 	)
 	(wire
 		(pts
+			(xy 232.41 100.33) (xy 245.11 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c3fbe66-6a70-4e86-a76c-a3e43d8b1fe0")
+	)
+	(wire
+		(pts
 			(xy 149.86 88.9) (xy 149.86 90.17)
 		)
 		(stroke
@@ -1869,16 +2009,6 @@
 			(type default)
 		)
 		(uuid "3bcea571-561e-4fb5-a46e-db486c246a6d")
-	)
-	(wire
-		(pts
-			(xy 67.31 140.97) (xy 67.31 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3d3a03bb-3961-4014-83bf-ab43634fa364")
 	)
 	(wire
 		(pts
@@ -1929,16 +2059,6 @@
 			(type default)
 		)
 		(uuid "64f2cd18-a1a2-4fd8-8f58-1bddde47dd2b")
-	)
-	(wire
-		(pts
-			(xy 67.31 144.78) (xy 67.31 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "66b6f0dd-a862-4c67-8db9-695f0ad4275c")
 	)
 	(wire
 		(pts
@@ -2022,16 +2142,6 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 147.32) (xy 69.85 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7c829f94-afae-445f-ba73-e028bd0054cf")
-	)
-	(wire
-		(pts
 			(xy 71.12 101.6) (xy 71.12 99.06)
 		)
 		(stroke
@@ -2109,16 +2219,6 @@
 			(type default)
 		)
 		(uuid "99890567-c384-4862-97e7-8496fc454983")
-	)
-	(wire
-		(pts
-			(xy 69.85 138.43) (xy 67.31 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a2f94726-454b-4dde-a2f3-c0d35fb3d119")
 	)
 	(wire
 		(pts
@@ -2252,26 +2352,6 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 140.97) (xy 67.31 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d00571f1-d13d-444a-8d59-c3a76e486173")
-	)
-	(wire
-		(pts
-			(xy 63.5 144.78) (xy 67.31 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d324c388-e3f3-4afe-a148-3ab368d51476")
-	)
-	(wire
-		(pts
 			(xy 73.66 96.52) (xy 63.5 96.52)
 		)
 		(stroke
@@ -2382,16 +2462,6 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 139.7) (xy 63.5 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f8c90d51-9378-4ca0-be81-def9cec57d4c")
-	)
-	(wire
-		(pts
 			(xy 67.31 92.71) (xy 67.31 93.98)
 		)
 		(stroke
@@ -2450,6 +2520,16 @@
 		)
 		(uuid "5504449f-8afb-46fd-a017-d278d8ae1966")
 	)
+	(label "USB_LIDAR"
+		(at 67.31 142.24 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "56aee31e-8983-403b-9c3f-f8abd4d7c34b")
+	)
 	(label "+6V_SERVO"
 		(at 233.68 140.97 0)
 		(effects
@@ -2459,16 +2539,6 @@
 			(justify left bottom)
 		)
 		(uuid "624f68cd-b262-4f75-b9e8-c6d752cfdb30")
-	)
-	(label "USB_DATA_HUB"
-		(at 69.85 147.32 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "80fdf195-3c61-4a8d-acb8-bd3ff3e771de")
 	)
 	(label "USB_DATA_HUB"
 		(at 73.66 96.52 0)
@@ -2520,82 +2590,15 @@
 		)
 		(uuid "dffe1776-b238-4d64-81a5-6b0f71a67df0")
 	)
-	(symbol
-		(lib_id "power:GND")
-		(at 69.85 140.97 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "08dcead7-ed85-4175-8851-3baddabd6624")
-		(property "Reference" "#PWR014"
-			(at 69.85 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(label "USB_LIDAR"
+		(at 245.11 100.33 0)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left bottom)
 		)
-		(property "Value" "GND"
-			(at 71.882 140.208 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 69.85 140.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 69.85 140.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 69.85 140.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f226dfab-1cc2-48b1-86df-138f7b5ddaf0")
-		)
-		(instances
-			(project "avionics"
-				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
-					(reference "#PWR014")
-					(unit 1)
-				)
-			)
-		)
+		(uuid "e7b0078f-b88c-4771-8672-bd0243865723")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -2666,7 +2669,7 @@
 			(uuid "2f51b9aa-f9c4-4fdc-99dd-ef9cbe83aea0")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "#PWR011")
 					(unit 1)
@@ -2745,7 +2748,7 @@
 			(uuid "06d74ff6-9a0d-4120-915c-2b7aa81117b1")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "F1")
 					(unit 1)
@@ -2822,7 +2825,7 @@
 			(uuid "d4d193cf-f722-48d4-bcf7-4aab4ee5c7b0")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "#PWR012")
 					(unit 1)
@@ -2831,7 +2834,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x03_Pin")
+		(lib_id "Connector:Conn_01x04_Pin")
 		(at 227.33 95.25 0)
 		(unit 1)
 		(body_style 1)
@@ -2884,7 +2887,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x03, script generated"
+		(property "Description" "Generic connector, single row, 01x04, script generated"
 			(at 227.33 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -2904,8 +2907,11 @@
 		(pin "2"
 			(uuid "c6920ad2-958d-4234-9126-7b4947e1e6d2")
 		)
+		(pin "4"
+			(uuid "52fbed04-755b-4daa-ae19-45a43c7e760c")
+		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "U_HUB1")
 					(unit 1)
@@ -2985,7 +2991,7 @@
 			(uuid "a920917f-6993-4c9f-9cfa-f5f70b3b7b74")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "SW1")
 					(unit 1)
@@ -3063,7 +3069,7 @@
 			(uuid "cb077f21-71d9-4661-b08c-134babd3efb9")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "#PWR05")
 					(unit 1)
@@ -3146,87 +3152,9 @@
 			(uuid "d5040fd0-239a-4644-8ee3-dcc25e7fc546")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "J_ESC_SIG")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 69.85 138.43 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "503a9007-24d9-4048-b3ca-f46471697864")
-		(property "Reference" "#PWR013"
-			(at 69.85 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 69.85 133.35 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 69.85 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 69.85 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 69.85 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ad99fdb4-21d3-40a3-b9d5-6c04bf959021")
-		)
-		(instances
-			(project "avionics"
-				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
-					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -3310,7 +3238,7 @@
 			(uuid "67d8386d-bb99-463d-83af-5b9826bcde07")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "U_COMP1")
 					(unit 1)
@@ -3388,7 +3316,7 @@
 			(uuid "bca9aec0-f874-47de-982a-08dce3b6691e")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "#PWR09")
 					(unit 1)
@@ -3397,7 +3325,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x03_Pin")
+		(lib_id "Connector:Conn_01x01_Pin")
 		(at 58.42 142.24 0)
 		(unit 1)
 		(body_style 1)
@@ -3409,7 +3337,7 @@
 		(fields_autoplaced yes)
 		(uuid "685eb550-3dad-40b1-8069-cd8ddbed92fe")
 		(property "Reference" "U_SENS1"
-			(at 59.055 134.62 0)
+			(at 59.055 137.16 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3419,7 +3347,7 @@
 			)
 		)
 		(property "Value" "RPLIDAR C1"
-			(at 59.055 137.16 0)
+			(at 59.055 139.7 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3450,7 +3378,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x03, script generated"
+		(property "Description" "Generic connector, single row, 01x01, script generated"
 			(at 58.42 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -3464,14 +3392,8 @@
 		(pin "1"
 			(uuid "37ce831e-1cca-458c-963b-6138f23fb17e")
 		)
-		(pin "2"
-			(uuid "11b370db-9678-41be-b6d8-df137b53a90d")
-		)
-		(pin "3"
-			(uuid "f71cd6a6-01a3-4e7c-9b77-a64378e56faf")
-		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "U_SENS1")
 					(unit 1)
@@ -3548,7 +3470,7 @@
 			(uuid "b820f593-e7e2-4f40-9d1e-14c928da3336")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "#PWR06")
 					(unit 1)
@@ -3625,7 +3547,7 @@
 			(uuid "d2667700-3705-49b3-9ab9-3f237ff57986")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "#PWR010")
 					(unit 1)
@@ -3711,7 +3633,7 @@
 			(uuid "9be8da56-cf15-4072-9f89-6823b0f33746")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "U_BUCK1")
 					(unit 1)
@@ -3794,7 +3716,7 @@
 			(uuid "bd8e507c-6001-45c9-8f80-7959390c9c46")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "M_STEER1")
 					(unit 1)
@@ -3871,7 +3793,7 @@
 			(uuid "7c41c594-e22c-4535-bb3d-59d66c3000a3")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "#PWR018")
 					(unit 1)
@@ -3951,7 +3873,7 @@
 			(uuid "266974bb-0e5a-42ec-b4b1-c2171cc56e4f")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "J_BAT")
 					(unit 1)
@@ -4029,7 +3951,7 @@
 			(uuid "3f4380ba-eb11-437d-8364-580d8edabc8c")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "#PWR01")
 					(unit 1)
@@ -4107,7 +4029,7 @@
 			(uuid "ef710d07-b48f-44ce-8b7b-85922621d1db")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "#PWR08")
 					(unit 1)
@@ -4196,7 +4118,7 @@
 			(uuid "75f875b1-75c4-448b-9417-9dd25830f040")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "U_MCU1")
 					(unit 1)
@@ -4274,7 +4196,7 @@
 			(uuid "1a3b5b8c-eb4b-4192-945f-d5777189c8bf")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "#PWR02")
 					(unit 1)
@@ -4352,7 +4274,7 @@
 			(uuid "66e46d5b-c5f3-4232-9732-ffdadb948a1e")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "#PWR04")
 					(unit 1)
@@ -4430,7 +4352,7 @@
 			(uuid "fe4719a3-94dd-46e9-a133-4c9194c4d72a")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "#PWR07")
 					(unit 1)
@@ -4459,7 +4381,7 @@
 				)
 			)
 		)
-		(property "Value" "QuicRun 1060 Input (Deans)"
+		(property "Value" "QuicRun 1060 Input"
 			(at 182.245 33.02 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4509,7 +4431,7 @@
 			(uuid "c77282a5-a726-4635-a96e-e671452c3469")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "J_ESC_PWR")
 					(unit 1)
@@ -4586,7 +4508,7 @@
 			(uuid "d07473b8-d9bd-44c0-8037-ca0de9c04519")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "#PWR016")
 					(unit 1)
@@ -4663,7 +4585,7 @@
 			(uuid "1360be8c-9199-41eb-896a-ac131acc53ef")
 		)
 		(instances
-			(project "avionics"
+			(project "vetronics"
 				(path "/1215f328-7219-4a6d-b808-c72612ecb717"
 					(reference "#PWR03")
 					(unit 1)
