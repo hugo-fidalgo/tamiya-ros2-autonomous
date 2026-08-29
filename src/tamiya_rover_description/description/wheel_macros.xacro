@@ -6,22 +6,25 @@
         <joint name="${prefix}_wheel_joint" type="continuous">
             <parent link="base_link"/>
             <child link="${prefix}_wheel_link"/>
-            <origin xyz="${x_offset} ${y_reflect * wheel_offset_y} 0" rpy="-${pi / 2} 0 0"/>
-            <axis xyz="0 0 1"/>
+            <origin xyz="${x_offset} ${y_reflect * wheel_offset_y} ${wheel_offset_z}" rpy="0 0 0"/>
+            <axis xyz="0 1 0"/>
         </joint>
     
 
         <link name="${prefix}_wheel_link">
             <visual>
                 <geometry>
-                    <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+                    <mesh filename="file://$(find tamiya_rover_description)/meshes/tt02d_wheel.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
+                <!-- Dinamically flip the mesh -->
+                <origin xyz="0 0 0" rpy="0 0 ${(1 - y_reflect) / 2 * pi}"/>
                 <material name="black"/>
             </visual>
             <collision>
                 <geometry>
                     <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
                 </geometry>
+                <origin xyz="0 0 0" rpy="-${pi / 2} 0 0"/>
                 <material name="black"/>
             </collision>
             <xacro:inertial_cylinder mass="${wheel_mass}" length="${wheel_length}" radius="${wheel_radius}">
@@ -45,7 +48,7 @@
         <joint name="${prefix}_steer_joint" type="revolute">
             <parent link="base_link"/>
             <child link="${prefix}_steer_link"/>
-            <origin xyz="${x_offset} ${y_reflect * wheel_offset_y} 0"/>
+            <origin xyz="${x_offset} ${y_reflect * wheel_offset_y} ${wheel_offset_z}"/>
             <axis xyz="0 0 1"/>
             <limit lower="-${max_steer_angle}" upper="${max_steer_angle}" effort="10.0" velocity="5.0"/>
         </joint>
@@ -61,21 +64,24 @@
         <joint name="${prefix}_wheel_joint" type="continuous">
             <parent link="${prefix}_steer_link"/>
             <child link="${prefix}_wheel_link"/>
-            <origin xyz="0 0 0" rpy="-${pi / 2} 0 0"/>
-            <axis xyz="0 0 1"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <axis xyz="0 1 0"/>
         </joint>
 
         <link name="${prefix}_wheel_link">
             <visual>
                 <geometry>
-                    <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+                    <mesh filename="file://$(find tamiya_rover_description)/meshes/tt02d_wheel.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
+                <!-- Dinamically flip the mesh -->
+                <origin xyz="0 0 0" rpy="0 0 ${(1 - y_reflect) / 2 * pi}"/>
                 <material name="black"/>
             </visual>
             <collision>
                 <geometry>
                     <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
                 </geometry>
+                <origin xyz="0 0 0" rpy="-${pi / 2} 0 0"/>
             </collision>
             <xacro:inertial_cylinder mass="${wheel_mass}" length="${wheel_length}" radius="${wheel_radius}">
                 <origin xyz="0 0 0"/>

@@ -31,7 +31,7 @@ def generate_launch_description():
         launch_arguments={'gz_args' : 'empty.sdf -r'}.items()
     )
 
-    # Run the spawner node form the ros_gz_sim package.
+    # Run the spawner node from the ros_gz_sim package.
 
     spawn_entity = Node(
         package='ros_gz_sim',
@@ -41,10 +41,25 @@ def generate_launch_description():
                    '-z', '0.1'],
         output='screen')
 
+    # Run the bridge node so that gazebo can publish and subscribe to the necessary topics
+
+    bridge_node = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=[
+            '/cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist',
+            '/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V',
+            '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
+            '/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model',
+        ],
+        output='screen'
+    )
+
 
     # Launch
     return LaunchDescription([
         rsp,
         gazebo,
         spawn_entity,
+        bridge_node,
     ])

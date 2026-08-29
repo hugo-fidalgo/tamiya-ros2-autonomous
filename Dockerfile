@@ -5,7 +5,6 @@ FROM ros:humble-ros-base AS obc
 # Update and install dependencies
 RUN apt-get update && apt-get install -y \
     ros-humble-ros2-control \
-    ros-humble-teleop-twist-keyboard \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
 

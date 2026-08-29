@@ -3,48 +3,40 @@
 
     <xacro:include filename="robot_materials.xacro"></xacro:include>
     <xacro:include filename="wheel_macros.xacro"></xacro:include>
-    <xacro:include filename="inertial_macros.xacro"></xacro:include>
-
-    <!-- Hardware Dimensions -->
-
+    <xacro:include filename="inertial_macros.xacro"></xacro:include>    
+    <!-- Hardware Dimensions -->    
     <!-- Chassis Specifications -->
     <xacro:property name="chassis_length" value="0.376"/>
     <xacro:property name="chassis_width" value="0.100"/>
     <xacro:property name="chassis_height" value="0.050"/>
-    <xacro:property name="chassis_mass" value="1.2"/>
-
+    <xacro:property name="chassis_mass" value="1.2"/>   
     <!-- Wheel Specifications -->
     <xacro:property name="wheel_radius" value="0.032"/>
     <xacro:property name="wheel_length" value="0.024"/>
     <xacro:property name="wheel_mass" value="0.03"/>
-    <xacro:property name="max_steer_angle" value="0.52"/> <!-- 30 Degrees turning radius -->
-
+    <xacro:property name="max_steer_angle" value="0.52"/> <!-- 30 Degrees turning radius -->    
     <!-- Joint offsets -->
-    <xacro:property name="track_width" value="0.158"/>
-    <xacro:property name="wheel_base" value="0.257"/>
-
+    <xacro:property name="track_width" value="0.182"/>
+    <xacro:property name="wheel_base" value="0.257"/>   
     <!-- Calculated Joint origins -->
     <xacro:property name="wheel_offset_y" value="${track_width / 2}"/>
-    <!-- Rear wheels are at x=0. Front wheels are at x=wheel_base -->
-
-
+    <xacro:property name="wheel_offset_z" value="${chassis_height / 2}"/>
+    <!-- Rear wheels are at x=0. Front wheels are at x=wheel_base -->   
     <!-- Base Link -->
-    <link name="base_link">
-
-    </link>
-
+    <link name="base_link"> 
+    </link> 
     <!-- Chassis Link-->
     <joint name="chassis_joint" type="fixed">
         <parent link="base_link"/>
         <child link="chassis_link"/>
         <origin xyz="${wheel_base / 2} 0 ${chassis_height / 2}"/>
-    </joint>
-
+    </joint>    
     <link name="chassis_link">
         <visual>
             <geometry>
-                <box size="${chassis_length} ${chassis_width} ${chassis_height}"/>
+                <mesh filename="file://$(find tamiya_rover_description)/meshes/tt02d_chassis.stl" scale="0.001 0.001 0.001"/>
             </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
             <material name="gray"/>
         </visual>
         <collision>
@@ -55,18 +47,33 @@
         <xacro:inertial_box mass="${chassis_mass}" x="${chassis_length}" y="${chassis_width}" z="${chassis_height}">
             <origin xyz="0 0 0"/>
         </xacro:inertial_box>
+    </link> 
+
+    <!-- Vetronics Deck Link -->
+    <joint  name="vetronics_deck_joint" type="fixed">
+        <parent link="chassis_link"/>
+        <child link="vetronics_deck_link"/>
+        <!-- z-offset to place it on top of the chassis -->
+        <origin xyz="0 0 ${chassis_height / 2 + 0.011}" rpy="0 0 0"/>
+    </joint>
+
+    <link name="vetronics_deck_link">
+        <visual>
+            <geometry>
+                <mesh filename="file://$(find tamiya_rover_description)/meshes/vetronics_deck.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="gray"/>
+        </visual>
     </link>
 
     <!-- Rear Right Wheel Link -->
-    <xacro:fixed_wheel prefix="rr" x_offset="0" y_reflect="-1" />
-
+    <xacro:fixed_wheel prefix="rr" x_offset="0" y_reflect="-1" />   
     <!-- Rear Left Wheel Link-->
-    <xacro:fixed_wheel prefix="rl" x_offset="0" y_reflect="1" />
-
+    <xacro:fixed_wheel prefix="rl" x_offset="0" y_reflect="1" />    
     <!-- Front Right Wheel Link -->
-    <xacro:steered_wheel prefix="fr" x_offset="${wheel_base}" y_reflect="-1" />
-
+    <xacro:steered_wheel prefix="fr" x_offset="${wheel_base}" y_reflect="-1" /> 
     <!-- Front Left Wheel Link -->
-    <xacro:steered_wheel prefix="fl" x_offset="${wheel_base}" y_reflect="1" />
-
+    <xacro:steered_wheel prefix="fl" x_offset="${wheel_base}" y_reflect="1" /> 
+ 
 </robot>
