@@ -15,6 +15,7 @@ FROM osrf/ros:humble-desktop AS dsktp
 
 # Update and install dependencies
 RUN apt-get update && apt-get install -y \
+    ros-humble-rplidar-ros \
     ros-humble-ros-gz \
     ros-humble-xacro \
     && rm -rf /var/lib/apt/lists/*

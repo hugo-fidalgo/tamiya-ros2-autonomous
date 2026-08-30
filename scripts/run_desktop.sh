@@ -1,4 +1,9 @@
 #!/bin/bash
+set -e
+
+# Resolve the repository root directory regardless of where the script was called from
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$REPO_ROOT"
 
 # Configuration Variables
 CONTAINER_USER="dev"
@@ -31,6 +36,14 @@ if [ -e /dev/arduino_mcu ]; then
 	DOCKER_ARGS+=("--device=/dev/arduino_mcu:/dev/arduino_mcu")
 else
 	echo "No hardware detected: Booting without mounting Arduino MCU."
+fi
+
+# Dinamically check for rplidar
+if [ -e /dev/rplidar ]; then
+	echo "Hardware detected: Mounting RPLidar."
+	DOCKER_ARGS+=("--device=/dev/rplidar:/dev/rplidar")
+else
+	echo "No hardware detected: Booting without mounting RPLidar."
 fi
 
 # Run the Docker container 
