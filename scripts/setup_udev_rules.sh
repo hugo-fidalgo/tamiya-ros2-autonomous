@@ -13,6 +13,7 @@ SUBSYSTEM=="tty", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="1002", SYMLINK+="a
 
 # RPLidar C1 Serial Interface Endpoint
 KERNEL=="ttyUSB*", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", MODE:="0666", SYMLINK+="rplidar"
+EOF"
 
 echo "[INFO] Reloading udev control engine..."
 sudo udevadm control --reload-rules
