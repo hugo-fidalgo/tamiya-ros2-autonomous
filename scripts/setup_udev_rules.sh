@@ -6,7 +6,7 @@ RULES_FILE="/etc/udev/rules.d/99-tamiya-hardware.rules"
 echo "[INFO] Generating hardware symlinks..."
 
 # Create the udev rules file
-sudo bash-c "cat << 'EOF' > ${RULES_FILE}
+sudo bash -c "cat << 'EOF' > ${RULES_FILE}
 
 # Arduino MCU Serial Bridge Endpoint
 SUBSYSTEM=="tty", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="1002", SYMLINK+="arduino_mcu"
