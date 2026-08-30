@@ -1,8 +1,10 @@
 import os
+
 from launch import LaunchDescription
 from launch_ros.actions import Node
 
-def generte_launch_description():
+
+def generate_launch_description():
 
     # RPLidar C1 Node
     rplidar_node = Node(
