@@ -24,7 +24,7 @@ DOCKER_ARGS=(
 
 if [ -e /dev/arduino_mcu ]; then
     echo "[INFO] Hardware detected: Mounting Arduino MCU."
-    DOCKER_ARGS+=("--device=/dev/arduiono_mcu:/dev/arduino_mcu")
+    DOCKER_ARGS+=("--device=/dev/arduino_mcu:/dev/arduino_mcu")
 fi
 
 if [ -e /dev/rplidar ]; then
