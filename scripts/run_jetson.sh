@@ -17,7 +17,7 @@ DOCKER_ARGS=(
     --name embedded-environment
     --user "$CONTAINER_USER"
     --network=host
-    --ipc-host
+    --ipc=host
     -v "$REPO_ROOT:$CONTAINER_WORKSPACE:rw"
     --group-add dialout
 )
@@ -33,4 +33,4 @@ if [ -e /dev/rplidar ]; then
 fi
 
 echo "[INFO] Booting Embedded OBC Container..."
-docker run "${DOCKER_ARGS[@]}" polemarchus-obs:latest /bin/bash
+docker run "${DOCKER_ARGS[@]}" polemarchus-obc:latest /bin/bash
