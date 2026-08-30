@@ -10,9 +10,9 @@ while [ ! -e /dev/rplidar ] || [ ! -e /dev/arduino_mcu ]; do
     sleep 1
 done
 
-echo "[AUTOSTART] Starting Flight Container..."
+echo "[AUTOSTART] Starting Embedded Container..."
 docker run --rm \
-    --name flight-environment-autostart \
+    --name embedded-environment-autostart \
     --user dev \
     --network=host \
     --ipc=host \
