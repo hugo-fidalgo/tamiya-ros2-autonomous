@@ -34,7 +34,7 @@
     <link name="chassis_link">
         <visual>
             <geometry>
-                <mesh filename="file://$(find tamiya_rover_description)/meshes/tt02d_chassis.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://tamiya_rover_description/meshes/tt02d_chassis.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <material name="gray"/>
@@ -60,7 +60,7 @@
     <link name="vetronics_deck_link">
         <visual>
             <geometry>
-                <mesh filename="file://$(find tamiya_rover_description)/meshes/vetronics_deck.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://tamiya_rover_description/meshes/vetronics_deck.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <material name="gray"/>

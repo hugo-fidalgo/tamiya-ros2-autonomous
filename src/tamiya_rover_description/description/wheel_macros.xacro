@@ -14,7 +14,7 @@
         <link name="${prefix}_wheel_link">
             <visual>
                 <geometry>
-                    <mesh filename="file://$(find tamiya_rover_description)/meshes/tt02d_wheel.stl" scale="0.001 0.001 0.001"/>
+                    <mesh filename="package://tamiya_rover_description/meshes/tt02d_wheel.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <!-- Dinamically flip the mesh -->
                 <origin xyz="0 0 0" rpy="0 0 ${(1 - y_reflect) / 2 * pi}"/>
@@ -71,7 +71,7 @@
         <link name="${prefix}_wheel_link">
             <visual>
                 <geometry>
-                    <mesh filename="file://$(find tamiya_rover_description)/meshes/tt02d_wheel.stl" scale="0.001 0.001 0.001"/>
+                    <mesh filename="package://tamiya_rover_description/meshes/tt02d_wheel.stl" scale="0.001 0.001 0.001"/>
                 </geometry>
                 <!-- Dinamically flip the mesh -->
                 <origin xyz="0 0 0" rpy="0 0 ${(1 - y_reflect) / 2 * pi}"/>
