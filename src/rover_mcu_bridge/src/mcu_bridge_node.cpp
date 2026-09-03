@@ -90,11 +90,11 @@ class McuBridgeNode : public rclcpp::Node
         void cmd_vel_callback(const geometry_msgs::msg::Twist::SharedPtr msg) const 
         {
             double linear_v = msg->linear.x; // Forward/Reverse velocity (m/s)
-            double angular_w = msg->angular.z; // Steering rotation (rad/s)
+            double angular_w = msg->angular.z * -1.0; // Steering rotation (rad/s)
 
             // Calibration Constants
-            const double MAX_INPUT_LINEAR_VEL = 2.0; // m/s 
-            const double MAX_INPUT_ANGULAR_VEL = 2.0; // rad/s
+            const double MAX_INPUT_LINEAR_VEL = 4.0; // m/s 
+            const double MAX_INPUT_ANGULAR_VEL = 1.0; // rad/s
             const int PWM_CENTER = 1500; // us
             const int PWM_MAX_DEVIATION = 500; // Maximum offset from center (1000 to 2000 us) 
 

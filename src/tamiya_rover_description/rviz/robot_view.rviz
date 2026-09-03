@@ -7,7 +7,6 @@ Panels:
         - /Global Options1
         - /Status1
         - /RobotModel1
-        - /RobotModel1/Status1
         - /LaserScan1
       Splitter Ratio: 0.5
     Tree Height: 720
@@ -59,7 +58,19 @@ Visualization Manager:
           Value: true
         chassis_link:
           Value: true
+        fl_steer_link:
+          Value: true
+        fl_wheel_link:
+          Value: true
+        fr_steer_link:
+          Value: true
+        fr_wheel_link:
+          Value: true
         laser_frame:
+          Value: true
+        rl_wheel_link:
+          Value: true
+        rr_wheel_link:
           Value: true
         vetronics_deck_link:
           Value: true
@@ -74,6 +85,16 @@ Visualization Manager:
             vetronics_deck_link:
               laser_frame:
                 {}
+          fl_steer_link:
+            fl_wheel_link:
+              {}
+          fr_steer_link:
+            fr_wheel_link:
+              {}
+          rl_wheel_link:
+            {}
+          rr_wheel_link:
+            {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -163,16 +184,16 @@ Visualization Manager:
       Decay Time: 0
       Enabled: true
       Invert Rainbow: false
-      Max Color: 255; 255; 255
+      Max Color: 255; 0; 0
       Max Intensity: 52
       Min Color: 0; 0; 0
       Min Intensity: 0
       Name: LaserScan
       Position Transformer: XYZ
       Selectable: true
-      Size (Pixels): 3
+      Size (Pixels): 4
       Size (m): 0.029999999329447746
-      Style: Flat Squares
+      Style: Points
       Topic:
         Depth: 5
         Durability Policy: Volatile
@@ -181,7 +202,7 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /scan
       Use Fixed Frame: true
-      Use rainbow: true
+      Use rainbow: false
       Value: true
   Enabled: true
   Global Options:
@@ -229,7 +250,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 7.965378761291504
+      Distance: 4.203584671020508
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -244,10 +265,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.665398120880127
+      Pitch: 0.9003978967666626
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.5503979921340942
+      Yaw: 1.5003970861434937
     Saved: ~
 Window Geometry:
   Displays:
