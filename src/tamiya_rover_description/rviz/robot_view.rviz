@@ -185,7 +185,7 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 0; 0
-      Max Intensity: 52
+      Max Intensity: 54
       Min Color: 0; 0; 0
       Min Intensity: 0
       Name: LaserScan
@@ -265,10 +265,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.9003978967666626
+      Pitch: 0.9253978729248047
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.5003970861434937
+      Yaw: 1.4853971004486084
     Saved: ~
 Window Geometry:
   Displays:
