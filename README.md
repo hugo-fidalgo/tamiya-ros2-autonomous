@@ -15,7 +15,7 @@ Polemarchus is a 1:10 scale robotics platform based on the Tamiya TT-02 chassis 
 
 <div align="center">
 
-  [![Project Demonstration](./docs/images/project_cover.png)]()
+  [![Project Demonstration](./docs/images/project_cover.png)]([text](https://youtu.be/ehe3ica5O2w))
 
   *Click the image above to view the physical system demo.*
 
