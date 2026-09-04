@@ -1,6 +1,7 @@
 <div align="center">
   
-  # [Project Logo]
+  ![](./docs/images/project_logo.png)
+
   **A 1:10 scale ROS 2 Teleoperated Perception Ground Vehicle**
   
   [![ROS @ Humble](https://img.shields.io/badge/ROS2-Humble-blue.svg)](https://docs.ros.org/en/humble/index.html)
@@ -14,7 +15,7 @@ Polemarchus is a 1:10 scale robotics platform based on the Tamiya TT-02 chassis 
 
 <div align="center">
 
-  [![Project Demonstration]()]()
+  [![Project Demonstration](./docs/images/project_cover.png)]()
 
   *Click the image above to view the physical system demo.*
 
